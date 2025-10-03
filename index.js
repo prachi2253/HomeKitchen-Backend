@@ -36,7 +36,7 @@ const verifyJWTToken = (req, res, next) => {
 
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@homekitchencluster.c7q8rlf.mongodb.net/HomeKitchendb?retryWrites=true&w=majority&appName=HomeKitchenCluster&directConnection=false`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@homekitchencluster.c7q8rlf.mongodb.net/HomeKitchendb?retryWrites=true&w=majority&appName=Prachi&directConnection=false`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -488,4 +488,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`HomeKitchen Restaurant Running on Port ${port}`);
 });
-//const uri = "mongodb+srv://prachigoyal:Prachii1301@@prachi.xmwo1sl.mongodb.net/?retryWrites=true&w=majority&appName=Prachi";
