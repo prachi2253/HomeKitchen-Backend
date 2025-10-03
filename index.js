@@ -10,7 +10,10 @@ const port = process.env.PORT || 5000;
 
 
 // middleware 
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173", // frontend origin
+  credentials: true
+}));
 app.use(express.json());
 
 // JWT ServerSite::Step=2 create a verify function  
@@ -33,7 +36,7 @@ const verifyJWTToken = (req, res, next) => {
 
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@homekitchencluster.c7q8rlf.mongodb.net/?retryWrites=true&w=majority&appName=HomeKitchenCluster`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@homekitchencluster.c7q8rlf.mongodb.net/HomeKitchendb?retryWrites=true&w=majority&appName=HomeKitchenCluster&directConnection=false`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
