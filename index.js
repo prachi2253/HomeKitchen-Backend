@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 
 // middleware 
 app.use(cors({
-  origin: "http://localhost:5173", // frontend origin
+  origin: "https://home-kitchen-frontend.vercel.app", // frontend origin
   credentials: true
 }));
 app.use(express.json());
