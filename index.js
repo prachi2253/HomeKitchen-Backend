@@ -11,7 +11,12 @@ const port = process.env.PORT || 5000;
 
 // middleware 
 app.use(cors({
-  origin: "https://home-kitchen-frontend.vercel.app", // frontend origin
+  origin: [
+    "http://localhost:5173",                                      // Local development
+    "https://home-kitchen-7e966.web.app",                       // Primary Firebase URL
+    "https://home-kitchen-7e966.firebaseapp.com",               // Secondary Firebase URL
+    "https://home-kitchen-7e966--preview-7yx4r6qo.web.app"      // Preview URL
+  ],
   credentials: true
 }));
 app.use(express.json());
