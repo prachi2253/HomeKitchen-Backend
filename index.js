@@ -17,7 +17,6 @@ app.use(cors({
     "https://home-kitchen-7e966.firebaseapp.com",               // Secondary Firebase URL
     "https://home-kitchen-7e966--preview-7yx4r6qo.web.app"      // Preview URL
   ],
-  credentials: true
 }));
 app.use(express.json());
 
