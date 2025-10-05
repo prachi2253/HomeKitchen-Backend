@@ -10,14 +10,18 @@ const port = process.env.PORT || 5000;
 
 
 // middleware 
-app.use(cors({
+const corsOptions = {
   origin: [
-    "http://localhost:5173",                                      // Local development
-    "https://home-kitchen-7e966.web.app",                       // Primary Firebase URL
-    "https://home-kitchen-7e966.firebaseapp.com",               // Secondary Firebase URL
-    "https://home-kitchen-7e966--preview-7yx4r6qo.web.app"      // Preview URL
+    "http://localhost:5173",
+    "https://home-kitchen-7e966.web.app",
+    "https://home-kitchen-7e966.firebaseapp.com",
+    "https://home-kitchen-7e966--preview-7yx4r6qo.web.app"
   ],
-}));
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(express.json());
 
 // JWT ServerSite::Step=2 create a verify function  
